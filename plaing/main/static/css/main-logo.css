@@ -1,0 +1,46 @@
+
+
+.main-logo {
+    overflow: hidden;
+    margin: 100px auto;
+    height: 80vh;
+}
+
+#name {
+    margin: 20px auto;
+    width: 200px;
+    height: 80px;
+}
+
+#top-name {
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 200%;
+    margin: 0 auto;
+}
+#slogan {
+    padding: 5px 0px 0px 10px;
+    font-size: 80%;
+    width: 150px;
+    height: 20px;
+    margin: 0 auto;
+
+}
+
+
+
+.dropdown {
+    height: 150px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#logo {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    padding: 0 75px;
+    
+}
+

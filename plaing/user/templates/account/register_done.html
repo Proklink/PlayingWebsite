@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link href="{% static 'css/reg-done.css' %}" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% block content%}
+<div id="regDone">
+    <p id="mes">{{user.username}}, вы зарегистрировались!</p>
+</div>
+{% endblock content%}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plg</title>
+  </head>
+  <link href="mainmenu.css" rel="stylesheet" type="text/css">
+  <link href="register-form.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+      html * {
+        font-family: Arial, 'Montserrat', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #message {
+        display:none;
+        background: #e1dddd;
+        color: #000;
+        position: relative;
+        padding: 2px;
+        margin: -10px 0px 5px 20px;
+      }
+
+      #message p {
+          padding: 1px 25px;
+          font-size: 12px;
+          margin: 0;
+      }
+
+      #title3 {
+        font-size: 12px;
+      }
+
+      .valid {
+          color: green;
+      }
+
+      .valid:before {
+          position: relative;
+          left: -25px;
+          content: "✔";
+      }
+
+      .invalid {
+         color: red;
+      }
+
+     .invalid:before {
+        position: relative;
+        left: -25px;
+        content: "✖";
+      }
+
+      .invalid-border {
+        border: 0.5px solid red;
+      }
+
+      .valid-border {
+        border: 0.5px solid green;
+      }
+        
+  </style>
+
+  
+  <body>
+    <div class="menu">
+      <a class="menu-button" href="index.html">Главная</a>
+      <a class="menu-button" href="">Игры</a>
+      <a class="menu-button" id="auth-button" href="auth.html">Войти</a>
+      <a class="menu-button" href="">Установить</a>
+	  </div>
+
+    <div id="register-form">
+      <form>
+          <p class="top-label">Email:</p> 
+          <input type="email" id="_email" name="_email" placeholder="Введите почту" required>
+
+          <p class="label">Имя:</p> 
+          <input type="text" id="usrname" name="usrname" placeholder="Как вас называть?">
+
+          <p class="label">Пароль: </p>
+          <input class="password-input" type="password" id="psw" name="psw" placeholder="Введите пароль" required>
+
+          <div id="message">
+            <span id="title3"><b>Password must contain the following:</b></span>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
+
+          <p class="label">Повторите пароль: </p>
+          <input class="password-input" type="password" id="rpsw" name="rpsw" placeholder="Введите пароль ещё раз" required>
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Зарегистрироваться</button>
+          </div>
+      </form>
+    </div>
+
+    <script src="form-validate.js"></script>
+  </body>
+</html>

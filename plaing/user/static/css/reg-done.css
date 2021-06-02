@@ -1,0 +1,13 @@
+#regDone {
+    width: 500px;
+    height: 100px;
+    margin: 100px auto;
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(223, 219, 219, 0.945);
+}
+
+#mes {
+    text-align: center;
+    padding: 20px;
+}

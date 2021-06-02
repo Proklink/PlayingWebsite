@@ -1,0 +1,21 @@
+.menu {
+  top: 0;
+  position: fixed;
+  margin:0 auto;
+  height:40px;
+  width:100%;
+  background-color: rgba(255, 255, 255, 0.836);
+  border-bottom: 1px solid #CCCCCC;
+  z-index: 1;
+}
+
+.menu-button {
+  font-size: 120%;
+  float:left;
+  margin: 8px 0px 0px 30px;
+}
+
+.menu-button:hover {
+  border-bottom: 3px solid black;
+  padding-bottom: 7px;
+}

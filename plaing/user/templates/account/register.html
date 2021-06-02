@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+  {% block styles %}
+  <link href="{% static 'css/registers-form.css' %}" rel="stylesheet" type="text/css">
+
+  {% endblock styles %}
+ 
+  
+  
+    {% block content %}
+
+    <style>
+      .error-message {
+        height: 13px;
+        display:none;
+        background: #e1dddd;
+        position: relative;
+        padding: 2px;
+        margin: -10px 0px 5px 20px;
+      }
+
+      .error-message p {
+        margin:0;
+      }
+
+      .mes {
+        margin: 0;
+        font-size: 12px;
+        color: rgb(255, 0, 0);
+      }
+
+      #stop-check-error {
+        margin-top: 2px;
+      }
+    </style>
+
+    <div id="register-form">
+      <form action = "." method="post" id="_form">
+          {% csrf_token %}
+          <p class="top-label">Email:</p> 
+          <input type="email" id="_email" name="_email" placeholder="Введите почту" required>
+
+          <div class="error-message" id="email-error">
+            <p class="mes">Пользователь с такой почтой уже сущестует</p>
+          </div>
+
+          <p class="label">Имя:</p> 
+          <input type="text" id="usrname" name="usrname" placeholder="Как вас называть?" required>
+
+          <div class="error-message" id="name-error">
+            <p class="mes">Пользователь с таким именем уже существует</p>
+          </div>
+
+          <p class="label">Пароль: </p>
+          <input class="password-input" type="password" id="psw" name="psw" placeholder="Введите пароль" required>
+
+          <div id="message">
+            <span id="title3"><b>Password must contain the following:</b></span>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
+
+          <p class="label">Повторите пароль: </p>
+          <input class="password-input" type="password" id="rpsw" name="rpsw" placeholder="Введите пароль ещё раз" required>
+
+          <div class="clearfix">
+            <button type="button" onclick="username_validate();" >Зарегистрироваться</button>
+          </div>
+
+          <div class="error-message" id="stop-check-error">
+            <p class="mes">Некоторые поля заполнены неправильно</p>
+          </div>
+      </form>
+    </div>
+
+
+  
+      
+    <script src="{% static 'js/form_validate.js'%}"></script>
+    <script src="{% static 'js/username_validate.js' %}"></script>
+    {% endblock content %}

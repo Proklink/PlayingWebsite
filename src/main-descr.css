@@ -1,0 +1,103 @@
+.descr-title {
+      height: 30px;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .left-float-section {
+      /* background-color:rgba(170, 135, 99, 0.884); */
+      width: 450px;
+      height: 200px;
+      margin: 0px 0px 0px 50px;
+      float: left;
+      /* border: 0.5px solid black; */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      color: rgba(255, 255, 255, 0.801);
+      backdrop-filter: blur(3px);
+      border-radius: 20px;
+      z-index: 0;
+    }
+
+    .right-float-section {
+      width: 450px;
+      height: 200px;
+      margin: 0px 50px 0px 0px;
+      float: right;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      color: rgba(255, 255, 255, 0.87);
+      backdrop-filter: blur(3px);
+      border-radius: 20px;
+      z-index: 0;
+      /* border: 2px solid black */
+    }
+
+    #wip-title {
+      width: 220px;
+    }
+
+    .section-descr {
+      width: 400px;
+      height: 100px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .description-section {
+      width: 100vw;
+      height: 80vh;
+      padding: 40vh 0 0 0;
+    }
+
+
+    #section1 {
+      background-image: url('division.jpg');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #section2 {
+      background-image: url('maxresdefault.jpg');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #section3 {
+      background-image: url('starc.jpg');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #section4 {
+      background-image: url('terr.jpeg');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #section5 {
+      background-image: url('nfs.jpeg');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #wdyni-title {
+      width: 260px;
+    }
+
+    #egp-title {
+      width:300px;
+    }
+
+    #rgn-title {
+      width: 276px;
+    }
+
+    #dgwop-title {
+      width:410px;
+    }

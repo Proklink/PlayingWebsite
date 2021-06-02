@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plg</title>
+    <link href="mainmenu.css" rel="stylesheet" type="text/css">
+    <link href="auth-form.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style type="text/css">
+
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+      html * {
+        font-family: Arial, 'Montserrat', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #auth-button {
+        border-bottom: 3px solid black;
+        padding-bottom: 7px;
+      }
+
+      
+  
+    </style>
+  </head>
+
+  
+  <body>
+    <div class="menu">
+      <a class="menu-button" href="index.html">Главная</a>
+      <a class="menu-button" href="">Игры</a>
+      <a class="menu-button" id="auth-button" href="auth.html">Войти</a>
+      <a class="menu-button" href="">Установить</a>
+	  </div>
+
+    <div id="login-form">
+      <form>
+          <p class="top-label">Email:</p> 
+          <input type="email" name="useremail" placeholder="Введите почту" pattern="[\D\d]+@[a-z]+\.[a-z]+" required>
+
+          <p class="label">Пароль: </p>
+          <input class="password-input" name="userpassword" type="password" placeholder="Введите пароль" required>
+
+          <p class="check">
+            <input class="check-remember" type="checkbox">
+            <span class="text-remember">Оставаться в системе</span>
+          </p>
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn">Войти</button>
+          </div>
+
+          <p id="register-ref"><a href="register.html">Регистрация</a></p>
+      </form>
+    </div>
+
+  </body>
+</html>

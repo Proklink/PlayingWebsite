@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+  <title > Plg </title>
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+	<link href="{% static 'css/mainmenu.css' %}" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  {% block styles %}
+    <link href="{% static 'css/main-logo.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/main-descr.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/main-button.css' %}" rel="stylesheet" type="text/css">
+  {% endblock styles %}
+	<style type="text/css">
+
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+		html * {
+			font-family: Arial, 'Montserrat', sans-serif;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+		}
+
+    #user {
+    position: fixed;
+    float:right;
+    height:40px;
+    width:15px;
+    margin: 18px 0px 0px 30px;
+    /* font-size: 120%; */
+    } 
+
+    #username {
+      font-size: 120%;
+      float:right;
+      margin: 8px 10px 0px 30px;
+    }
+	</style>
+   
+</head>
+
+
+<body class>
+    
+	<div class="menu">
+		<a class="menu-button" id="main-button" href="{% url 'main:main' %}">Главная</a>
+		<a class="menu-button" id="games-button" href="{% url 'main:games' %}">Игры</a>
+
+    {% if not request.user.is_authenticated %}
+		<a class="menu-button" id="auth-button" href="{% url 'user:login' %}">Войти</a>
+    {% else %}
+    <a class="menu-button" id="auth-button" href="{% url 'user:logout' %}">Выйти</a>
+    <p id="username">{{request.user.username}}</p>
+    {% endif %}
+
+		<a class="menu-button" id="install-button"href="">Установить</a>
+	</div>
+
+    {% block content %}
+	<div class="main-logo">
+		<div id="name">
+			<p id="top-name">Play.ing</p>
+			<p id="slogan">For gamers about games</p>
+		</div>
+
+		<div class="dropdown">
+			<img id="logo" src="{% static 'images/logo.png' %}">
+        </div>
+    </div>
+  
+    <div class="description">
+
+      <div class="description-section" id="section1">
+        <div class="left-float-section">
+            <div class="descr-title" id="wip-title">Что такое Playing?</div>
+            <p class="section-descr">Это место, где собраны все когда-либо созданные игры в виде стен с контентом о каждой.</p>
+        </div>
+      </div>
+
+      <div class="description-section" id="section2">
+        <div class="right-float-section">
+            <div class="descr-title" id="wdyni-title">Зачем вам Playing?</div>
+            <p class="section-descr">Чтобы делиться с друзьям вашим опытом в мире игр, а также смотреть достижения других.</p>
+        </div>
+      </div>
+
+      <div class="description-section" id="section3">
+        <div class="left-float-section">
+            <div class="descr-title" id="egp-title">Оценивайте игры лично</div>
+            <p class="section-descr">Играм можно ставить оценку и оставлять отзывы. </p>
+        </div>
+      </div>
+
+      <div class="description-section" id="section4">
+        <div class="right-float-section">
+            <div class="descr-title" id="rgn-title">Читайте новости игр</div>
+            <p class="section-descr">В специальном новостном разделе вы можете узнать о последних новостях из мира игр.</p>
+        </div>
+      </div>
+
+      <div class="description-section" id="section5">
+        <div class="left-float-section">
+            <div class="descr-title" id="dgwop-title">Обсудите игру с другими игроками</div>
+            <p class="section-descr">Игру можно обсудить с другими игроками в специальных тредах обсуждений.</p>
+        </div>
+      </div>
+
+    </div>
+    {% endblock content %}
+
+    <script>
+      var csrftoken = Cookies.get('csrftoken');
+      function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+      $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+          if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+          }
+        }
+      });
+    </script>
+    
+  </body>
+</html>

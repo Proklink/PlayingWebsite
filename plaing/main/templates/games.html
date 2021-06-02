@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'css/games.css' %}" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% block content %}
+
+<style>
+    .game-div {
+        margin: 50px 400px 20px 50px;
+        border: 1px solid black;
+        background-color: rgb(129, 136, 120);
+        padding-bottom: 30px;
+    }
+
+    .game-name {
+        text-align: center;
+        margin: 10px 0 0 10px;
+    }
+
+    .game-info {
+        display: block;
+        position:relative;
+    }
+
+    .game-pic {
+        width: 300px;
+        height: auto;
+    }
+
+    .main-pic {
+        display: inline-block;
+        margin: 10px 0 0 20px;
+    }
+
+    .game-descr {
+        position: absolute;
+        max-width: 400px;
+        max-height: 150px;
+        display: inline-block;
+        margin: 10px 0 0 10px;
+        
+    }
+
+    .game-descr p {
+        margin: 0 0 10px 0;
+    }
+
+    .dtext {
+        height: 100%;
+        margin: 10px 10px 10px 10px;
+    }
+
+    .likes-dislikes {
+        width: 300px;
+        margin: 10px 0 0 20px;
+        display: block;
+        position:relative;
+    }
+
+    .likes-dislikes a {
+        margin: 0;
+    }
+
+
+    .finger-img-size {
+        width: 32px;
+        height:auto;
+    }
+
+    .shown {
+        display: block;
+    }
+
+    .unshown {
+        display: none;
+    }
+
+    .like, .dislike {
+        width: 32px;
+        display: inline-block;
+        position:relative;
+        
+    }
+
+    .dislike-count {
+        display: inline-block;
+        position:relative;
+        margin-left: 50px;
+    }
+
+    .like-count {
+        display: inline-block;
+        position:relative;
+        margin-left: 70px;
+    }
+
+</style>
+
+{% for game in games %}
+    <div class="game-div">
+        <h3 class="game-name"> {{game.game_name}} </h3>
+        <div class="game-info">
+            <div class="main-pic">
+                <img class="game-pic" src="{{ game.image.url }}">
+            </div>
+            <div class="game-descr">
+                <p > Описание: </p>
+                <span class="dtext"> {{game.description}} </span>
+            </div>
+            <div class="likes-dislikes">  
+                <div class="like-count" id="{{ game.id }}lc"> {{ game.users_like.count }} </div>
+                <a href="#" data-id="{{ game.id }}" 
+                data-action="{% if request.user in game.users_like.all %}un{% endif %}like" 
+                class="like button" id="l{{ game.id }}">
+                    {% if request.user not in game.users_like.all %}
+                    
+                    <div style="display: block;" id="{{ game.id }}f-up">
+                        <img class="finger-img-size "  src="{% static 'images/up.png' %}">
+                    </div>
+                    <div style="display: none;" id="{{ game.id }}liked">
+                        <img class="finger-img-size " src="{% static 'images/liked.png' %}">
+                    </div>
+                    {% else %}
+                    <div style="display: none;" id="{{ game.id }}f-up">
+                        <img class="finger-img-size " src="{% static 'images/up.png' %}">
+                    </div>
+                    <div style="display: block;" id="{{ game.id }}liked">
+                        <img class="finger-img-size " src="{% static 'images/liked.png' %}">
+                    </div>
+                    {% endif %}
+                </a>
+
+                <div class="dislike-count" id="{{ game.id }}dc"> {{ game.users_dislike.count }} </div>
+                <a href="#" data-id="{{ game.id }}" 
+                data-action="{% if request.user in game.users_dislike.all %}un{% endif %}dislike" 
+                class="dislike button" id="d{{ game.id }}">
+                    {% if request.user not in game.users_dislike.all %}
+                    
+                    <div style="display: block;" id="{{ game.id }}f-down">
+                        <img class="finger-img-size "  src="{% static 'images/down.png' %}">
+                    </div>
+                    <div style="display: none;" id="{{ game.id }}disliked">
+                        <img class="finger-img-size " src="{% static 'images/disliked.png' %}">
+                    </div>
+                    {% else %}
+                    <div style="display: none;" id="{{ game.id }}f-down">
+                        <img class="finger-img-size " src="{% static 'images/down.png' %}">
+                    </div>
+                    <div style="display: block;" id="{{ game.id }}disliked">
+                        <img class="finger-img-size " src="{% static 'images/disliked.png' %}">
+                    </div>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        
+    </div>
+{% endfor %}
+<script src="{% static 'js/like.js'%}"></script>
+<script src="{% static 'js/timer.js'%}"></script>
+{% endblock content %}

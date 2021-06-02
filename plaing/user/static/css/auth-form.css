@@ -1,0 +1,80 @@
+      #auth-button {
+        border-bottom: 3px solid black;
+        padding-bottom: 7px;
+      }
+      
+      #login-form {
+        width: 370px;
+        margin: 150px 0 0 150px;
+        border: 1px solid black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(223, 219, 219, 0.945);
+      }
+
+      input[type=text], input[type=password] {
+        width: 300px;
+        padding: 15px;
+        margin: 5px 0 22px 20px;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      .top-label {
+        font-weight: bold;
+        margin: 20px 0px 0px 20px;
+      }
+
+      .label {
+        font-weight: bold;
+        margin: 0px 0px 0px 20px;
+      }
+
+      .check {
+        width: 220px;
+        height: 30px;
+        margin: 0px 0px 0px 20px;
+      }
+
+      .check-remember {
+        width:24px;
+        height: 24px;
+      }
+
+      .text-remember {
+        width: 100px;
+        height: 24px;
+        bottom: 15px;
+        text-align: center;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0px 0px 20px;
+        border: none;
+        cursor: pointer;
+        width: 330px;
+        height: 45px;
+        font-weight: normal;
+        font-size: 17px;
+      }
+
+      button:hover {
+        background-color: #4CBF55
+      }
+
+      #register-ref {
+        width: 330px;
+        height: 24px;
+        text-align: center;
+        margin:10px 0px 0px 20px;
+      }
+
+     
